@@ -1,25 +1,63 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Home from './Component/Home/Home';
+import JobDetail from './Component/JobDetail/JobDetail';
+import Login from './Component/Home/Navbar/Login';
+import BrowseJobs from './Component/BrowseJobs/BrowseJobs';
+import Privacy from './Component/Pages/Privacy';
+import AboutUs from './Component/Pages/AboutUs';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/jobdetail/:id_name' element={<JobDetail />} />
+          <Route path='/login' element={<Login />} />
+          <Route path="/browseJobs" element={<BrowseJobs />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/about" element={<AboutUs />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+// import React from 'react'
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import "./App.css";
+// import Home from "./Component/Home/Home";
+// import JobDetail from './Component/JobDetail/JobDetail';
+// import Login from './Component/Home/Navbar/Login';
+// function App() {
+//   return (
+
+//     <BrowserRouter>
+//       <div className='container'>
+//         <Routes>
+//           <Route exact path="/" element={<Home />} />
+
+//           <Route path="/jobdetail/:id_name" element={<JobDetail />} />
+
+//           <Route path="/login" component={Login} />
+//         </Routes>
+
+//       </div>
+
+//     </BrowserRouter>
+//   )
+// }
+
+// export default App;

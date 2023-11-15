@@ -1,0 +1,34 @@
+.job h2,
+p {
+    text-align: left;
+}
+
+.job {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 15vh;
+}
+
+
+.job img {
+    float: right;
+    opacity: 0.5;
+
+}
+
+@media (max-width:600px) {
+    .job {
+        top: 7vh;
+    }
+
+}
+
+#file {
+    width: 13vw;
+    height: 11vh;
+    border-radius: 30px;
+}

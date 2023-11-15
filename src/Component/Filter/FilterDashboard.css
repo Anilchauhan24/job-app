@@ -1,0 +1,102 @@
+.FilterDashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.Left-dashboard {
+    width: 14vw;
+    /* background-color: red; */
+
+}
+
+.left-dashboard-line {
+    border: 1px solid rgb(221, 209, 209);
+}
+
+.right-dashboard {
+
+    width: 63vw;
+    /* background-color: green; */
+}
+
+@media (max-width:600px) {
+    .FilterDashboard {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        top: 13vh;
+    }
+
+    .Left-dashboard {
+        width: 100%;
+        /* background-color: red; */
+
+    }
+
+    #right-dashboard {
+        width: 100%;
+        /* background-color: green; */
+    }
+
+    .content-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    #content-cards .box {
+        width: 100%;
+    }
+
+    .input-box #input-box {
+        width: 100%;
+    }
+}
+
+.content-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.box {
+    width: 251px;
+    height: 210px;
+
+    /* width: 200px;
+    height: 200px; */
+
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box .box-item {
+    text-align: center;
+}
+
+#linnks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+
+}
+
+#input-box {
+    width: 60%;
+    background: yellow;
+    text-align: center;
+
+}
