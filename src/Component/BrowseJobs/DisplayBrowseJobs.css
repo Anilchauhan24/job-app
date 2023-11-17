@@ -4,3 +4,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.card {
+    transition: width 2s;
+}
+
+.card:hover {
+    opacity: 0.8;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
