@@ -64,6 +64,10 @@ function Footer() {
                     </ul>
 
                 </div>
+                <div>
+
+
+                </div>
 
                 <p>Copyright@findJobs</p>
             </div>

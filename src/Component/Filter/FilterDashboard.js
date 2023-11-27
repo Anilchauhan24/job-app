@@ -31,6 +31,7 @@ const FilterDashboard = () => {
         const searchedJob = data.filter((item) => item.company_name.toLowerCase().includes(matchData))
 
         setUpdateData(searchedJob)
+
     }
 
 
@@ -46,6 +47,7 @@ const FilterDashboard = () => {
     const highestSalary = () => {
         const sortedData = [...data].sort((a, b) => b.salary - a.salary);
         setUpdateData(sortedData);
+
     };
 
     const lowestSalary = () => {
@@ -66,20 +68,21 @@ const FilterDashboard = () => {
         });
 
         setUpdateData(filteredAndSelectedData);
+
+
     };
 
-    const handleFullTimeChange = () => {
-        setShowFullTime(!showFullTime);
+    const handleFullTimeChange = (event) => {
+        const newData = (event.target.value.showFullTime)
+        setShowFullTime(newData);
     };
+
+
+
 
     const handlePartTimeChange = () => {
         setShowPartTime(!showPartTime);
     };
-
-
-
-
-
 
     return (
         <div className='FilterDashboard'>
@@ -100,10 +103,10 @@ const FilterDashboard = () => {
                         <input type="range" id="salaryRange" min-value="100" max-value={salaryRange} onChange={handleSalaryRangeChange} />
                         <p>Job Type</p>
                         <input type="checkbox" id="box1" value="full-time" checked={showFullTime} onChange={handleFullTimeChange} />
-                        <label for="html">Full-Time</label>
+                        <label for="Full-Time">Full-Time</label>
                         <br />
                         <input type="checkbox" id="box1" value="part-time" checked={showPartTime} onChange={handlePartTimeChange} />
-                        <label for="html">Part-Time</label>
+                        <label for="Part-Time">Part-Time</label>
                         <br />
                         <p>Experience</p>
                         <input type="checkbox" id="box1" value="full-type" />
@@ -122,11 +125,9 @@ const FilterDashboard = () => {
                     <button>Search</button>
                 </div>
                 <div className='content-cards' id="content-cards">
-
-
                     {updateData.map(item => (
-                        <div className='box1 box'>
-                            <h6 key={item.id_name}>{item.job_name}</h6>
+                        <div className='box1 box' key={item._id}>
+                            <h6>{item.job_name}</h6>
                             <span>{item.company_name}</span>
                             <ul id="linnks">
                                 <li>{item.work}</li>
@@ -136,24 +137,20 @@ const FilterDashboard = () => {
                             <p className="box-item">Salary: Rs-{item.salary}</p>
                             <p className="box-item">joining:{item.joining}</p>
 
-
                             <Link to={`/id/${item._id}`} onClick={() => handleClickData(item._id)}>
                                 <button>Apply Now</button>
-
                             </Link>
                         </div>
-
                     ))}
                 </div>
-
             </div>
             {clickData && (
                 <div>
-
                     <h2>Job Name:{clickData.job_name}</h2>
                     <p className="h6">Type of work:{clickData.work}</p>
                     <p className="h6">Salary:{clickData.salary}</p>
                     <p className="h6">joining:{clickData.joining}</p>
+                    <p className="h6">Work:{clickData.work}</p>
                 </div>
             )}
         </div >
